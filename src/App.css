@@ -1,0 +1,218 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100%;
+  padding: 50px 150px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.sideBar {
+  background-color: #18181c;
+  width: 25%;
+  height: 80vh;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.sideBar .sideBarBtn {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.sideBar .sideBarBtn img {
+  width: 30px;
+  height: 30px;
+}
+
+.sideBar .sideBarBtn:hover {
+  background-color: #2d2c35;
+  padding: 5px 20px;
+}
+
+.sideBar .sideBarBtn p {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #83839c;
+}
+
+.MainSection {
+  width: 80%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.MainSection .AddSection {
+  padding: 20px;
+  border-radius: 20px;
+  height: 100px;
+  display: flex;
+  gap: 20px;
+  background-color: #18181c;
+}
+
+.MainSection .AddSection input {
+  width: 80%;
+  border-radius: 8px;
+  background-color: #2d2c35;
+  border: none;
+  outline: none;
+  padding-left: 20px;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.MainSection .AddSection button {
+  width: 120px;
+  background-color: #7b57f5;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.MainSection .AddSection button:hover {
+  background-color: #9270ff;
+}
+
+.MainSection .TasksSection {
+  padding: 20px 30px;
+  border-radius: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #18181c;
+  overflow: auto;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+  scrollbar-color: #2d2c35 #18181c;
+}
+
+.MainSection .TasksSection h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #9270ff;
+}
+
+.MainSection .TasksSection img {
+  width: 30px;
+  height: 30px;
+}
+
+.MainSection .TasksSection p {
+  font-size: 1.2rem;
+}
+
+.MainSection .TasksSection .task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px 20px;
+  background-color: #2d2c35;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.MainSection .TasksSection .task div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media screen and (max-width: 1060px) {
+  #root {
+    padding: 50px 100px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  #root {
+    padding: 50px 50px;
+    flex-direction: column;
+  }
+  .sideBar {
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    gap: 20px;
+  }
+  .sideBar .sideBarBtn {
+    margin-bottom: 0px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  #root {
+    padding: 50px 50px;
+    flex-direction: column;
+  }
+  .sideBar {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .MainSection {
+    width: 100%;
+  }
+
+  .sideBar .sideBarBtn p {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #83839c;
+  }
+  .sideBar .sideBarBtn img {
+    height: 25px;
+    width: 25px;
+  }
+
+  .MainSection .AddSection button {
+    font-size: 0.8rem;
+  }
+
+  .MainSection .AddSection input {
+    font-size: 1rem;
+  }
+
+  .MainSection .TasksSection img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .MainSection .TasksSection p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #root {
+    padding: 50px 20px;
+  }
+}
