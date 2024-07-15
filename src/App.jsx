@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import inboxall from "/inboxall.svg";
 import uncheck from "/uncheck.svg";
 import check from "/check.svg";
@@ -51,11 +51,14 @@ function App() {
     localStorage.setItem("tasks", JSON.stringify([...list, newtask]));
   }
 
-  const filteredList = list.filter((task) => {
-    if (filter === "Done") return task.isChecked;
-    if (filter === "To Do") return !task.isChecked;
-    return true;
-  });
+  const filteredList = useMemo(() => {
+    return list.filter((task) => {
+      console.log("aaaaaa");
+      if (filter === "Done") return task.isChecked;
+      if (filter === "To Do") return !task.isChecked;
+      return true;
+    });
+  }, [list]);
 
   let myList = filteredList.map((task) => {
     return (
